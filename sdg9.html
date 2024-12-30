@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="sdg9.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUSINESS CASE STUDY 2</title>
+</head>
+<body>
+
+
+
+
+    <section>
+        <div>
+            <article>
+                <br>
+                <h2 class="heading1">TOURISM SECTOR</h2>
+                <section class="mpara">
+                <p >
+                    <p class="sdg">Optimizing Tourist Routes Using Shortest Path Algorithms</p> <br>
+                    <p class="insidesdg">Context:</p>Tourists visiting a city often face challenges in efficiently navigating between multiple destinations due to limited time, budget, and transportation constraints. They require a system to identify the most optimal route that minimizes travel distance or time while ensuring they can visit as many attractions as possible within their constraints.
+                    <p class="insidesdg">Problem Statement:</p>
+                    Given the list of tourist destinations within the city along with route distances and a sources destination. We need to find the shortest path between destinations or to find the nearest tourist destination.
+                    
+
+
+                    <p class="insidesdg">Possible solution:</p>
+                    Here we can use graph algorithms in order to find the shortest path. There are several graph algorithms
+                    <br>1) Bellman ford Algorithm: Generally bellman-ford algorithm is used when there is a negative cycle within the graph and has time complexity of O(n^2). But in this case there are no negative cycles, therefore we are not using bellman-ford algorithm.
+                    
+                    <br>2)Floyd Algorithm: This algorithm is used when we need to find the shortest distance between each and every node/destination and has a time complexity of O(n^3). But in our case we need to find shortest path only from source node. Therefore we are not using Floyd algorithm.
+                    
+                    <br>3)Dijkstra's Algorithm: This algorithm is used to used to find shortest distance between one souce to all destinations and has time complexity of O(n*log n) and is suitable for our case. Therefore we use Dijkstra's Algorithm.
+                    
+
+                    <br><br><p>Code Implementation</p>
+                    <a href="dijkstra.txt" class="button">CLICK HERE</a>
+                    <br><br>
+                    <p>For more info</p>
+                    <a href="https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-using-priority_queue-stl/" class="button">CLICK HERE</a>
+                
+                </p>
+            </section>
+
+                
+
+                <br><a href="sdgs.html" class="button">Back</a>
+
+            <br><br>
+            </article>
+        </div>
+    </section>
+
+
+
+
+ 
+</body>
+</html>

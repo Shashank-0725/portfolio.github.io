@@ -1,0 +1,73 @@
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <climits>
+using namespace std;
+
+// Function to implement Dijkstra's algorithm
+void dijkstra(int n, vector<pair<int, int>> adj[], int src) {
+    // Priority queue to store {distance, node}, with the smallest distance at the top
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+
+    // Initialize distances to all nodes as infinity
+    vector<int> dist(n, INT_MAX);
+
+    // Set the source node's distance to 0 and push it to the queue
+    dist[src] = 0;
+    pq.push({0, src});
+
+    while (!pq.empty()) {
+        int current_dist = pq.top().first; // Current distance from the source
+        int current_node = pq.top().second; // Current node being processed
+        pq.pop();
+
+        // Skip if the distance is already outdated
+        if (current_dist > dist[current_node]) continue;
+
+        // Traverse all adjacent nodes of the current node
+        for (auto edge : adj[current_node]) {
+            int neighbor = edge.first;  // Neighboring node
+            int weight = edge.second;  // Weight (distance) of the edge
+
+            // Check if a shorter path is found
+            if (dist[current_node] + weight < dist[neighbor]) {
+                dist[neighbor] = dist[current_node] + weight;
+                pq.push({dist[neighbor], neighbor}); // Push updated distance to the queue
+            }
+        }
+    }
+
+    // Print the shortest distances from the source
+    cout << "Node\tDistance from Source\n";
+    for (int i = 0; i < n; i++) {
+        cout << i << "\t" << (dist[i] == INT_MAX ? -1 : dist[i]) << endl;
+    }
+}
+
+int main() {
+    // Number of nodes and edges
+    int n, m;
+    cout << "Enter the number of nodes and edges: ";
+    cin >> n >> m;
+
+    // Adjacency list for the graph representation
+    vector<pair<int, int>> adj[n];
+
+    cout << "Enter the edges (u, v, w):\n";
+    for (int i = 0; i < m; i++) {
+        int u, v, w;
+        cin >> u >> v >> w;
+        adj[u].push_back({v, w});
+        adj[v].push_back({u, w}); // If the graph is undirected
+    }
+
+    // Source input
+    int src;
+    cout << "Enter the source node: ";
+    cin >> src;
+
+    // Run Dijkstra's algorithm
+    dijkstra(n, adj, src);
+
+    return 0;
+}
