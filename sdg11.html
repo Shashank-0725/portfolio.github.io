@@ -80,9 +80,85 @@ House prices in ascending order (₹): <br>
 
 
                     
+<p class="sdg">Other approach is Quick sort</p> <br>
+
+Steps of Quick Sort: 
+
+1. Choose a Pivot: <br>
+
+A pivot element is chosen (usually the first, last, or a random element in the array). <br>
+
+
+
+2. Partition: <br>
+
+Rearrange the array so that: <br>
+
+All elements smaller than the pivot are on its left. <br>
+
+All elements greater than the pivot are on its right. <br>
+
+
+
+
+3. Recursively Apply Quick Sort: <br>
+
+The left and right subarrays are recursively sorted. <br>
+
+Example): <br>
+
+Input Array: 
+
+[40, 10, 30, 20] <br>
+
+Step 1: Choose Pivot <br>
+
+Choose the last element as the pivot: 20. <br>
+
+Step 2: Partition <br>
+
+Rearrange the array around the pivot: <br>
+
+[10, 20, 30, 40] <br>
+
+Here: <br>
+
+10 is smaller than 20 (pivot), so it is on the left. <br>
+
+30 and 40 are greater than 20, so they are on the right. <br>
+
+
+Step 3: Recursively Apply Quick Sort <br>
+
+Apply the same process to the left [10] and right [30, 40] subarrays: <br>
+
+Left: [10] (already sorted) <br>
+Right: [30, 40] → Pivot: 40 → [30, 40] (sorted) <br>
+
+Input Prices: <br>
+₹25,00,000, ₹10,00,000, ₹30,00,000, ₹15,00,000, ₹40,00,000 <br>
+
+
+
+
+Output: <br>
+
+Original house prices (in ₹): <br>
+₹25 lakh ₹10 lakh ₹30 lakh ₹15 lakh ₹40 lakh  <br>
+
+House prices sorted in ascending order (in ₹): <br>
+₹10 lakh ₹15 lakh ₹25 lakh ₹30 lakh ₹40 lakh <br>
+
+
+
+
+                    
 
                     <br><br><p>Code Implementation</p>
+                    <br><p>Merge sort</p><br>
                     <a href="merge sort.txt" class="button">CLICK HERE</a>
+                    <br><p>Quick sort</p><br>
+                    <a href="Quick sort.txt" class="button">CLICK HERE</a>
                     <br><br>
                     <p>For more info</p>
                     <a href="https://www.geeksforgeeks.org/merge-sort/" class="button">CLICK HERE</a>
