@@ -1,0 +1,82 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>  
+using namespace std;
+
+void merge(vector<pair<int, string>>& properties, int left, int mid, int right) {
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+
+    // Create temporary vectors
+    vector<pair<int, string>> leftVec(n1), rightVec(n2);
+
+    // Copy data
+    for (int i = 0; i < n1; i++) {
+        leftVec[i] = properties[left + i];
+    }
+    for (int i = 0; i < n2; i++) {
+        rightVec[i] = properties[mid + 1 + i];
+    }
+
+  // (Ascending Order)
+    int i = 0, j = 0, k = left;
+    while (i < n1 && j < n2) {
+        if (leftVec[i].first <= rightVec[j].first) {
+            properties[k++] = leftVec[i++];
+        } else {
+            properties[k++] = rightVec[j++];
+        }
+    }
+
+    // Copy the remaining elements of leftVec
+    while (i < n1) {
+        properties[k++] = leftVec[i++];
+    }
+
+    // Copy the remaining elements of rightVec
+    while (j < n2) {
+        properties[k++] = rightVec[j++];
+    }
+}
+
+
+void mergeSort(vector<pair<int, string>>& properties, int left, int right) {
+    if (left < right) {
+        int mid = left + (right - left) / 2;
+
+        mergeSort(properties, left, mid);
+        mergeSort(properties, mid + 1, right);
+        merge(properties, left, mid, right);
+    }
+}
+
+
+void printProperties(const vector<pair<int, string>>& properties) {
+    for (const auto& property : properties) {
+        cout << "Price: " << property.first << ", Location: " << property.second << endl;
+    }
+}
+
+int main() 
+{
+    vector<pair<int, string>> properties = {
+        {500000, "LocationA"},
+        {300000, "LocationB"},
+        {400000, "LocationC"},
+        {600000, "LocationD"},
+        {200000, "LocationE"}
+    };
+
+    //merge sort
+    mergeSort(properties, 0, properties.size() - 1);
+     cout << "Sorted Properties (Ascending by Price):" << endl;
+     printProperties(properties);
+   
+   
+     reverse(properties.begin(), properties.end());
+    // descending order by price
+    cout <<"\nSorted Properties (Descending by Price):"<< endl;
+    printProperties(properties);
+
+    return 0;
+}
