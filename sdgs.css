@@ -18,8 +18,8 @@ a {
 .navigation ul {
     display: flex;
     justify-content: flex-end;
-    padding: 20px 5%;
-    font-size: 20px;
+    padding: 10px 5%;
+    font-size: 15px;
 }
 
 .navigation a {
@@ -60,7 +60,7 @@ a {
     color: white;
     border: bold 2px black;
     border-radius: 20px;
-    font-size: 16px;
+    font-size: 14px;
     transition: background-color 0.3s;
 }
 
