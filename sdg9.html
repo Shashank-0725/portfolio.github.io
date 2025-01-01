@@ -33,6 +33,64 @@
                     <br>3)Dijkstra's Algorithm: This algorithm is used to used to find shortest distance between one souce to all destinations and has time complexity of O(n*log n) and is suitable for our case. Therefore we use Dijkstra's Algorithm.
                     
 
+        <p class="sdg">Example</p>
+
+                    Graph Representation: <br>
+
+                    The city has 5 attractions: A, B, C, D, E. The road distances (in kilometers) between attractions are as follows: <br>
+                    
+                    1. A → B: 10 km <br>
+                    
+                    
+                    2. A → C: 15 km <br>
+                    
+                    
+                    3. B → D: 12 km <br>
+                    
+                    
+                    4. B → E: 5 km <br>
+                    
+                    
+                    5. C → E: 8 km <br>
+                    
+                    
+                    6. D → E: 6 km <br>
+                    
+                    Input to the Program: <br>
+                    
+                    1. Graph: Adjacency list with distances in kilometers. <br>
+                    
+                    
+                    2. Starting Point: A <br>
+                    
+                    Output: <br>
+                    
+                    Shortest distances from A: <br>
+                    To A: 0 km  <br>
+                    To B: 10 km <br>
+                    To C: 15 km <br>
+                    To D: 22 km <br>
+                    To E: 15 km <br>
+                    
+                    
+                    
+                    
+                    Explanation of Output: <br>
+                    
+                    1. To B: Direct path A → B with a distance of 10 km. <br>
+                    
+                    
+                    2. To C: Direct path A → C with a distance of 15 km. <br>
+                    
+                    
+                    3. To D: Path A → B → D with a total distance of 22 km (A → B = 10 km, B → D = 12 km). <br>
+                    
+                    
+                    4. To E: Path A → B → E with a total distance of 15 km (A → B = 10 km, B → E = 5 km). <br>
+
+
+
+                    
                     <br><br><p>Code Implementation</p>
                     <a href="dijkstra.txt" class="button">CLICK HERE</a>
                     <br><br>
