@@ -1,0 +1,47 @@
+#include <iostream>
+#include <vector>
+#include <utility>  // for std::pair
+
+using namespace std;
+
+// Function to implement Selection Sort in descending order
+void selectionSortDescending(vector<pair<int, int>>& employees) {
+    int n = employees.size();
+    
+    // Traverse through all elements in the vector
+    for (int i = 0; i < n - 1; i++) {
+        int maxIndex = i;
+        
+        // Find the maximum element in unsorted part of array
+        for (int j = i + 1; j < n; j++) {
+            if (employees[j].second > employees[maxIndex].second) {
+                maxIndex = j;
+            }
+        }
+        
+        // Swap the found maximum element with the first element
+        swap(employees[i], employees[maxIndex]);
+    }
+}
+
+int main() {
+    // Input: Vector of employee pairs (id, experience)
+    vector<pair<int, int>> employees = {
+        {101, 5},  // Employee with ID 101 and experience 5 years
+        {102, 2},  // Employee with ID 102 and experience 2 years
+        {103, 8},  // Employee with ID 103 and experience 8 years
+        {104, 3},  // Employee with ID 104 and experience 3 years
+        {105, 6}   // Employee with ID 105 and experience 6 years
+    };
+    
+    // Sorting the employees by experience (in descending order) using Selection Sort
+    selectionSortDescending(employees);
+    
+    // Output: Display sorted employees by experience in descending order
+    cout << "Employees sorted by experience (descending):" << endl;
+    for (const auto& emp : employees) {
+        cout << "ID: " << emp.first << ", Experience: " << emp.second << " years" << endl;
+    }
+    
+    return 0;
+}

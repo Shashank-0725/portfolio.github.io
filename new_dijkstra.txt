@@ -1,0 +1,72 @@
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <climits>  // For INT_MAX
+#include <string>
+#include <utility>  // For std::pair
+
+using namespace std;
+
+vector<int> dijkstra(int V, vector<vector<pair<int, int>>>& adjList, int source) {
+    vector<int> dist(V, INT_MAX);  
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+
+    dist[source] = 0; 
+    pq.push({0, source});
+
+    while (!pq.empty()) {
+        int u = pq.top().second;
+        pq.pop();
+
+        for (const auto& edge : adjList[u]) {
+            int v = edge.first;    // Destination vertex
+            int weight = edge.second; // Edge weight (distance)
+
+            if (dist[u] + weight < dist[v]) {
+                dist[v] = dist[u] + weight;
+                pq.push({dist[v], v});
+            }
+        }
+    }
+
+    return dist;
+}
+
+int main() 
+{
+    vector<string> places = {
+        "Museum", "Park", "Resort", "Hill Trek", "Jungle Safari"
+    };
+
+    int V = 5;
+
+    vector<vector<pair<int, int>>> adjList(V);
+
+    adjList[0].push_back({1, 10});  // M- P
+    adjList[1].push_back({0, 10});  // P - M
+    adjList[0].push_back({2, 20});  // M- R
+    adjList[2].push_back({0, 20});  // R- M
+    adjList[2].push_back({3, 30});  // R- H
+    adjList[3].push_back({2, 30});  // H - R
+    adjList[3].push_back({4, 40});  // H- J
+    adjList[4].push_back({3, 40});  // J- H
+    adjList[4].push_back({1, 15});  // J- P
+    adjList[1].push_back({4, 15});  // P- J
+    adjList[4].push_back({2, 25});  // J - R
+    adjList[2].push_back({4, 25});  // R- J
+
+    cout << "Enter the starting point (0: Museum, 1: Park, 2: Resort, 3: Hill Trek, 4: Jungle Safari): ";
+    int start;
+    cin >> start;
+
+    vector<int> distances = dijkstra(V, adjList, start);
+
+
+    cout << "Shortest path from " << places[start] << ":\n";
+    for (int i = 0; i < V; i++) {
+            cout << "Distance to " << places[i] << ": " << distances[i] << " km\n";
+    }
+
+    return 0;
+}
+
