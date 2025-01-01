@@ -32,76 +32,94 @@
                     
                     <br>3)Dijkstra's Algorithm: This algorithm is used to used to find shortest distance between one souce to all destinations and has time complexity of O(n*log n) and is suitable for our case. Therefore we use Dijkstra's Algorithm.
                     
+                    <br>
 
-        <p class="sdg">Example</p>
+                    <video controls src="dijkstra.mp4" width="300px"></video><br>
+                    <p class="sdg">Example</p> <br>
 
                     Graph Representation: <br>
 
-                    The city has 5 attractions: A, B, C, D, E. The road distances (in kilometers) between attractions are as follows: <br>
+                    <img src="graph.png" alt="graph"> <br>
                     
-                    1. A → B: 10 km <br>
-                    
-                    
-                    2. A → C: 15 km <br>
-                    
-                    
-                    3. B → D: 12 km <br>
-                    
-                    
-                    4. B → E: 5 km <br>
-                    
-                    
-                    5. C → E: 8 km <br>
-                    
-                    
-                    6. D → E: 6 km <br>
-                    
-                    Input to the Program: <br>
-                    
-                    1. Graph: Adjacency list with distances in kilometers. <br>
-                    
-                    
-                    2. Starting Point: A <br>
-                    
-                    Output: <br>
-                    
-                    Shortest distances from A: <br>
-                    To A: 0 km  <br>
-                    To B: 10 km <br>
-                    To C: 15 km <br>
-                    To D: 22 km <br>
-                    To E: 15 km <br>
+                    <p class="sdg">Input to the Program: </p><br>
+                 
+                    Starting Point: 0(Museum) <br> <br>
                     
                     
                     
+                    <p class="sdg">Output of the Progrem: </p> <br>
+                
                     
-                    Explanation of Output: <br>
-                    
-                    1. To B: Direct path A → B with a distance of 10 km. <br>
-                    
-                    
-                    2. To C: Direct path A → C with a distance of 15 km. <br>
-                    
-                    
-                    3. To D: Path A → B → D with a total distance of 22 km (A → B = 10 km, B → D = 12 km). <br>
-                    
-                    
-                    4. To E: Path A → B → E with a total distance of 15 km (A → B = 10 km, B → E = 5 km). <br>
+                    Shortest path from Museum: <br>
+                    Distance to Museum: 0 km <br>
+                    Distance to Park: 10 km <br>
+                    Distance to Resort: 20 km <br>
+                    Distance to Hill Trek: 50 km <br>
+                    Distance to Jungle Safari: 25 km <br> 
 
 
-
-                    
-                    <br><br><p>Code Implementation</p>
-                    <a href="dijkstra.txt" class="button">CLICK HERE</a>
+                    <br><p>Code Implementation</p>
+                    <a href="new_dijkstra.txt" class="button">CLICK HERE</a>
                     <br><br>
                     <p>For more info</p>
                     <a href="https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-using-priority_queue-stl/" class="button">CLICK HERE</a>
                 
                 </p>
-            </section>
+            </section> <br><br><br>
+<!-- ------------------------------------------------------------------------------- -->
+ 
+<h2 class="heading1">INDUSTRIAL FIRM</h2>
+
+<section class="mpara">
+    <p >
+        <p class="sdg">Employee Skill Allocation in an Industrial Firm</p> <br>
+        <p class="insidesdg">Context:</p>In an industrial firm, efficient management of employee skills and allocation is crucial to maintain productivity.  A proper skill allocation strategy is required to maximize the efficiency of the workforce.
+        <p class="insidesdg">Problem Statement:</p>
+        The firm needs to sort employees by their skill proficiency or years of experience so that each department is staffed with the right individuals for the specific tasks. The company wants to ensure that the employees with higher proficiency or experience are prioritized for more complex tasks
+        
+
+
+        <p class="insidesdg">Possible solution: Selection Sort</p>
+         This algorithm iteratively selects the smallest (or largest) element and places it in the correct position, making it another viable choice when simplicity and small input size are considered. It works by selecting the smallest (or largest) item from the unsorted portion and swapping it with the first unsorted item.
+        <br>
+
+        <video controls src="selection_sort.webm" width="300px"></video>
+
+        <p class="sdg">Example</p> <br>
+
+   
+        <p class="sdg">Input to the Program: </p><br>
+     
+        Employees: (ID, Experience) <br>
+       {101, 5}, {102, 2}, {103, 8}, {104, 3}, {105, 6}<br> <br>
+        
+        
+        
+        <p class="sdg">Output of the Progrem: </p> <br>
+    
+        
+        Employees sorted by experience (descending): <br>
+        ID: 103, Experience: 8 years <br>
+        ID: 105, Experience: 6 years <br>
+        ID: 101, Experience: 5 years <br>
+        ID: 104, Experience: 3 years <br>
+        ID: 102, Experience: 2 years<br> 
+
+
+        <br><p>Code Implementation</p>
+        <a href="new selection sort.txt" class="button">CLICK HERE</a>
+        <br><br>
+        <p>For more info</p>
+        <a href="https://www.geeksforgeeks.org/selection-sort-algorithm-2/" class="button">CLICK HERE</a>
+    
+    </p>
+</section>
+
+
+
 
                 
-
+<!-- ------------------------------------------------------------------------------- -->
                 <br><a href="index.html" class="button">Back</a>
 
             <br><br>
